@@ -1,8 +1,9 @@
 import express, { Router, Request, Response } from "express";
 import { Application } from "express";
 import appLogger from "./middleware/appLogger";
-import authRouter from "./routes/authRouter";
 import path from "path";
+import authRouter from "./routes/authRouter";
+import menuRouter from "./routes/menuRouter";
 
 var cors = require("cors");
 const app: Application = express();
@@ -28,6 +29,7 @@ app.use(appLogger);
  * Router Configuration
  */
 app.use("/auth", authRouter);
+app.use("/menu", menuRouter);
 
 /*
  * Static Media configuration
