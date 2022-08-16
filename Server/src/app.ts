@@ -5,6 +5,7 @@ import path from "path";
 import authRouter from "./routes/authRouter";
 import menuRouter from "./routes/menuRouter";
 import orderRouter from "./routes/orderRouter";
+import cartRouter from "./routes/cartRouter";
 
 var cors = require("cors");
 const app: Application = express();
@@ -32,6 +33,7 @@ app.use(appLogger);
 app.use("/auth", authRouter);
 app.use("/menu", menuRouter);
 app.use("/order", orderRouter);
+app.use("/cart", cartRouter);
 
 /*
  * Static Media configuration
