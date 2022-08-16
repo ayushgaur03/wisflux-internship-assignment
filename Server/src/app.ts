@@ -4,6 +4,7 @@ import appLogger from "./middleware/appLogger";
 import path from "path";
 import authRouter from "./routes/authRouter";
 import menuRouter from "./routes/menuRouter";
+import orderRouter from "./routes/orderRouter";
 
 var cors = require("cors");
 const app: Application = express();
@@ -30,6 +31,7 @@ app.use(appLogger);
  */
 app.use("/auth", authRouter);
 app.use("/menu", menuRouter);
+app.use("/order", orderRouter);
 
 /*
  * Static Media configuration

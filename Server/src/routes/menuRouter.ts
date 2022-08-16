@@ -1,6 +1,4 @@
 import { Request, Response, Router } from "express";
-import { db } from "../database/configuration";
-import { pizza_item } from "../interfaces/menu";
 import CategorizedPizzas from "../methods/menuMethods/CategorizedPizzas";
 import FetchMenu from "../methods/menuMethods/FetchMenu";
 import FetchMenuItem from "../methods/menuMethods/FetchMenuItem";
