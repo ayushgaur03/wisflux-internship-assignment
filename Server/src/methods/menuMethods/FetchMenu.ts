@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { db } from "../../database/configuration";
-import { pizza_item } from "../../interface/menu";
+import { pizza_item } from "../../interfaces/menu";
 
 const FetchMenu = (req: Request, res: Response) => {
   db.many("select * from menu")
