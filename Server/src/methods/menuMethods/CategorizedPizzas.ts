@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { db } from "../../database/configuration";
-import { pizza_item } from "../../interface/menu";
+import { pizza_item } from "../../interfaces/menu";
 
 const CategorizedPizzas = (req: Request, res: Response) => {
   const filter_by: string = req.params.cat;
