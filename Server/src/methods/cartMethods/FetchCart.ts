@@ -11,7 +11,8 @@ select
     cart.size,
     menu.name,
     menu.category,
-    menu.price 
+    menu.price,
+    menu.img_location as img_loc
 from 
     cart 
 left join menu on 

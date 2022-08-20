@@ -4,4 +4,5 @@ export interface cart_item {
   size:string;
   add_on: object;
   menu_item: number;
+  img_loc:string;
 }

@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: aqua;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+}
+
+.left-section {
+  margin-left: 1%;
+}
+
+.right-section {
+  margin-right: 2%;
+}
