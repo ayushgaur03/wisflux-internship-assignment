@@ -1,0 +1,34 @@
+.main-page {
+  width: 100%;
+  display: flex;
+}
+
+.menu-container {
+  height: auto;
+  background-color: beige;
+  width: 65%;
+}
+
+.menu-filter {
+  height: 50px;
+  display: flex;
+  top: 50px;
+  z-index: 100;
+  position: sticky;
+}
+
+.menu-list {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  width: 60%;
+}
+
+.menu-label {
+  height: 100%;
+  width: 120px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

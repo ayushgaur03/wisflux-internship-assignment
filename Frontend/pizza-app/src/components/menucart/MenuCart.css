@@ -1,0 +1,62 @@
+.cart-container {
+  background-color: chartreuse;
+  width: 35%;
+  height: calc(100vh - 50px);
+  position: relative;
+}
+
+.cart-header {
+  height: 60px;
+  background-color: aliceblue;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 50px;
+}
+
+.cart-display {
+  height: calc(100% - 110px);
+  background-color: silver;
+  overflow-y: scroll;
+}
+
+.cart-footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color: transparent;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cart-subtotal {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cart-subtotal::before {
+  font-size: 20px;
+  font-weight: 600;
+  content: "Subtotal: ";
+}
+
+.cart-submit-btn {
+  width: 120px;
+  height: 35px;
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: red;
+  color: white;
+  transition: ease-in-out;
+}
+
+.cart-submit-btn:hover {
+  transform: scale(1.06);
+}
