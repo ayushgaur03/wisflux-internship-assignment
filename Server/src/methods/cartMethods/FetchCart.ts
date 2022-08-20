@@ -12,6 +12,7 @@ select
     menu.name,
     menu.category,
     menu.price,
+    menu.dscrptn,
     menu.img_location as img_loc
 from 
     cart 

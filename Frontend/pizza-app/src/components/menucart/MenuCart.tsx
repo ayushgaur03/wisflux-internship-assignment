@@ -15,6 +15,7 @@ interface CartItemFromServer {
   category: string;
   price: number;
   img_loc: string;
+  dscrptn: string;
 }
 
 const URL = "http://localhost:4000/cart";
@@ -63,7 +64,6 @@ const MenuCart = () => {
     axios
       .delete(`${URL}/${cart_id}`, AXIOS_CONFIG)
       .then((result) => {
-        console.log(result.data);
         setQty(0);
       })
       .catch((err) => {
@@ -109,7 +109,11 @@ const MenuCart = () => {
       </div>
       <div className="cart-footer">
         <span className="cart-subtotal">Rs. {subtotal} /-</span>
-        <button type="submit" className="cart-submit-btn" onClick={()=>navigate("../checkout")}>
+        <button
+          type="submit"
+          className="cart-submit-btn"
+          onClick={() => navigate("../checkout")}
+        >
           checkout
         </button>
       </div>

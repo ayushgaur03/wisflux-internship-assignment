@@ -1,0 +1,80 @@
+.checkout-item {
+  height: 100px;
+  position: relative;
+  display: flex;
+  background-color: white;
+  margin-bottom: 5px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+}
+
+.checkout-img-section {
+  position: relative;
+  width: 160px;
+}
+
+.checkout-img {
+  height: 85px;
+  width: 140px;
+  object-fit: cover;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+.category-img {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.checkout-text {
+  width: calc(100% - 300px);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-desc {
+  width: 60%;
+  height: 40%;
+  line-height: 1;
+  font-size: 12px;
+}
+
+.item-customization {
+  height: 30%;
+  width: 60%;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.item-customization::before {
+  content: "Customization: ";
+  font-weight: 500;
+}
+
+.checkout-price {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.item-price {
+  font-weight: 600;
+  font-weight: 600;
+  padding-left: 15px;
+}
+
+.item-price::before {
+  content: "Rs. ";
+}

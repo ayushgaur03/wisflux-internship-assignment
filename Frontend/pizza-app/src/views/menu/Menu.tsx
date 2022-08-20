@@ -8,10 +8,10 @@ const Menu = () => {
       <div className="menu-container">
         <div className="menu-filter">
           <ul className="menu-list">
-            {/* <MenuItem itemName={"veg"} active={""} label={"Veg Pizza"} />
-            <MenuItem itemName={"nonveg"} active="" label={"Non-Veg Pizza"} />
-            <MenuItem itemName={"sides"} active="" label={"Sides"} />
-            <MenuItem itemName={"beverages"} active="" label={"Beverages"} /> */}
+           <li className="menu-heading"><button className="menu-label">Veg Pizza</button></li>
+           <li className="menu-heading"><button className="menu-label">Non-Veg Pizza</button></li>
+           <li className="menu-heading"><button className="menu-label">Sides</button></li>
+           <li className="menu-heading"><button className="menu-label">Beverages</button></li>
           </ul>
         </div>
         <div className="menu display">
