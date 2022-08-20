@@ -1,0 +1,174 @@
+.page-container {
+  height: calc(100vh - 50px);
+  background-color: #f2f2f2;
+  overflow: hidden;
+  display: flex;
+}
+
+.left {
+  height: 88%;
+  width: 75%;
+  background-color: antiquewhite;
+  margin-top: 1rem;
+  padding: 15px 25px;
+}
+.left-text {
+  height: 12%;
+  display: flex;
+  flex-direction: column;
+}
+.back-button {
+  width: 70px;
+  height: 38px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.banner {
+  padding-top: 5px;
+  text-align: center;
+}
+
+.checkout-display {
+  height: 88%;
+  margin-top: 10px;
+  overflow-y: auto;
+}
+
+.right {
+  height: calc(100vh - 50px);
+  width: 25%;
+  position: relative;
+}
+
+.billing-container {
+  width: 80%;
+  background-color: aquamarine;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  top: 20px;
+  position: absolute;
+  left: 25px;
+}
+
+.heading {
+  margin: 5px auto 10px auto;
+  text-transform: capitalize;
+}
+
+.client-name {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.client-address {
+  margin: 10px auto;
+  line-height: 1.2;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+.client-contact {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.client-contact::before {
+  content: "Mobile No.: ";
+  font-weight: 600;
+}
+
+.price-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 10px 20px;
+  padding: 10px 10px;
+  height: 200px;
+  position: absolute;
+  bottom: 100px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  background-color: aqua;
+}
+
+.price-tags {
+  margin-bottom: 12px;
+  width: 100%;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.price-value {
+  position: absolute;
+  right: 0;
+  font-weight: 500;
+}
+
+.price-value::before {
+  content: "Rs. ";
+  font-weight: 500;
+}
+
+.price-tags-final {
+  margin-top: 5px;
+  margin-bottom: 12px;
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #2f2f2f;
+  padding-top: 10px;
+}
+
+.label-final {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.price-value-final {
+  position: absolute;
+  right: 0;
+  font-weight: 500;
+}
+
+.price-value-final::before {
+  content: "Rs. ";
+  font-weight: 500;
+}
+
+.place-btn {
+  position: absolute;
+  bottom: 20px;
+  width: 82%;
+  height: 50px;
+  left: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  transition: ease-in-out;
+}
+
+.place-btn:hover {
+  transform: scale(1.08);
+}

@@ -1,4 +1,3 @@
-
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import rootReducer from "./rootReducer";
@@ -19,7 +18,6 @@ function loadFromLocalStorage() {
   try {
     const serialisedState = localStorage.getItem("persistantState");
     if (serialisedState === null) return {};
-    console.log(JSON.parse(serialisedState));
     return JSON.parse(serialisedState);
   } catch (e) {
     console.warn(e);

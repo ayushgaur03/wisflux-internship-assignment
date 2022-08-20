@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./MenuCartItem.css";
 
 interface CartItem {
@@ -52,7 +52,7 @@ const MenuCartItem = ({
         ) : (
           <></>
         )}
-        <span className="item-price">Rs {price} /- each</span>
+        <span className="item-price">{price} /- each</span>
       </div>
       <div className="item-qty">
         <button onClick={() => changeQty(qty + 1)}>+</button>
