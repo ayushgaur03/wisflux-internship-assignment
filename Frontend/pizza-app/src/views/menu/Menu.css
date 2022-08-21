@@ -1,34 +1,73 @@
 .main-page {
   width: 100%;
   display: flex;
+  height: calc(100vh - 50px);
 }
 
 .menu-container {
-  height: auto;
   background-color: beige;
   width: 65%;
+  height: 100%;
 }
 
 .menu-filter {
-  height: 50px;
+  height: 40px;
   display: flex;
   top: 50px;
-  z-index: 100;
   position: sticky;
+  width: 100%;
 }
 
 .menu-list {
   margin: 0;
   list-style: none;
   display: flex;
-  width: 60%;
+  width: 100%;
+  padding: 0;
 }
 
-.menu-label {
-  height: 100%;
-  width: 120px;
+.menu-heading {
+  width: 25%;
+}
+
+.menu-btn {
+  height: 40px;
   background-color: red;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  cursor: pointer;
 }
+
+.menu-display {
+  height: calc(100% - 40px);
+  margin-top: 0.5rem;
+}
+
+.menu-label {
+  position: relative;
+  width: 100%;
+  height: 35px;
+}
+
+.menu-label span {
+  position: absolute;
+  left: 3rem;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  top: 5px;
+}
+
+.menu-items {
+  margin: 3px auto;
+  padding: 5px 15px 5px 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: calc(100% - 35px);
+  overflow-y: auto;
+}
+

@@ -20,11 +20,11 @@ interface CartItemFromServer {
 
 const URL = "http://localhost:4000/cart";
 
-const MenuCart = () => {
+const MenuCart = ({ render_item }: { render_item: string }) => {
   const navigate = useNavigate();
   const client_id = useAppSelector((state) => state.auth.client_id);
 
-  const [qty, setQty] = useState<number>(0);
+  const [qty, setQty] = useState<number>(-1);
   const [items, setItems] = useState<Array<CartItemFromServer>>([]);
   // const [subtotal, setSubtotal] = useState<number>(0);
   let subtotal: number = 0;
@@ -45,7 +45,7 @@ const MenuCart = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [qty, client_id]);
+  }, [qty, client_id, render_item]);
 
   const updateQuantity = (q: number, cart_id: number) => {
     console.log(client_id);
@@ -108,7 +108,7 @@ const MenuCart = () => {
           })}
       </div>
       <div className="cart-footer">
-        <span className="cart-subtotal">Rs. {subtotal} /-</span>
+        <span className="cart-subtotal">Rs. {subtotal.toFixed(2)} /-</span>
         <button
           type="submit"
           className="cart-submit-btn"
