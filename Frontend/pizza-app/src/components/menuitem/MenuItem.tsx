@@ -3,6 +3,7 @@ import "./MenuItem.css";
 import DropDown from "../dropdown/DropDown";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { useAppSelector } from "../../app/store";
+import { useNavigate } from "react-router-dom";
 
 interface MenuItemProps {
   menu_id: number;
@@ -33,6 +34,7 @@ const MenuItem = ({
   category,
   handleRender,
 }: MenuItemProps) => {
+  const navigate = useNavigate();
   const client_id: string = useAppSelector((state) => state.auth.client_id);
   const [itemSize, setItemSize] = useState<string>("small");
 
@@ -77,6 +79,14 @@ const MenuItem = ({
           className="menu-item-category"
         />
         <span className="menu-item-price">{price}</span>
+        <button
+          className="customize-btn"
+          onClick={() => {
+            navigate("../customize", { state: { menu_id: menu_id } });
+          }}
+        >
+          customize
+        </button>
       </div>
       <div className="menu-item">
         <div className="menu-item-banner">

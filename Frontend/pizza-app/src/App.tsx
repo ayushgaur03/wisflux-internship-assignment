@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Menu from "./views/menu/Menu";
 import Checkout from "./views/checkout/Checkout";
+import Customize from "./views/customize/Customize";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Navbar />}>
             <Route path="menu" element={<Menu />} />
             <Route path="checkout" element={<Checkout />} />
+            <Route path="customize" element={<Customize />} />
           </Route>
         </Routes>
       </BrowserRouter>
