@@ -26,7 +26,7 @@ const MenuCart = ({ render_item }: { render_item: string }) => {
 
   const [qty, setQty] = useState<number>(-1);
   const [items, setItems] = useState<Array<CartItemFromServer>>([]);
-  // const [subtotal, setSubtotal] = useState<number>(0);
+
   let subtotal: number = 0;
 
   const AXIOS_CONFIG = {
@@ -39,7 +39,6 @@ const MenuCart = ({ render_item }: { render_item: string }) => {
     axios
       .get(URL, AXIOS_CONFIG)
       .then((res) => {
-        console.log(res.data);
         setItems(res.data);
       })
       .catch((err) => {

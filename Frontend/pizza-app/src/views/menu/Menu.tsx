@@ -5,13 +5,6 @@ import MenuCart from "../../components/menucart/MenuCart";
 import "./Menu.css";
 import MenuItem from "../../components/menuitem/MenuItem";
 
-// interface MenuItem {
-//   name: string;
-//   dscrptn: string;
-//   price: number;
-//   qty: number;
-// }
-
 interface MenuData {
   category: string;
   dscrptn: string;
@@ -44,7 +37,6 @@ const Menu = () => {
     axios
       .get(`${URL}/${menu}`, AXIOS_CONFIG)
       .then((result: AxiosResponse) => {
-        console.log(result);
         setMenuData(result.data);
       })
       .catch((err: AxiosError) => {

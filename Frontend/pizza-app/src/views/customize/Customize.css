@@ -1,0 +1,109 @@
+.custom-container {
+  height: calc(100vh - 50px);
+  width: 100vw;
+}
+
+.custom-item-wrapper {
+  height: 95%;
+  width: 50%;
+  padding: 2rem 3rem 2rem 3rem;
+}
+
+.custom-img-cover {
+  height: 45%;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-pizza-img {
+  height: 100%;
+  width: 60%;
+  object-fit: cover;
+}
+
+.custom-item-category {
+  height: 20px;
+  width: 20px;
+  top: 1rem;
+  position: absolute;
+  left: 10rem;
+}
+
+.custom-item-details {
+  height: 45%;
+  width: 60%;
+  margin: 1.5rem auto 0.5rem auto;
+}
+
+.custom-item-header {
+  height: 20%;
+  margin: 0 auto;
+}
+
+.custom-item-header span {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 2;
+}
+
+.custom-item-ingredients {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.custom-item-ingredients label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.custom-item-ingredients span {
+}
+
+.custom-pizza-sellout {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding-left: 5px;
+}
+
+.dropdown-container {
+  width: 20%;
+}
+
+.custom-pizza-price {
+  position: absolute;
+  right: 1rem;
+  bottom: 1.8rem;
+  font-weight: 500;
+}
+
+.custom-pizza-price::before {
+  content: "Rs ";
+}
+
+.custom-addtocart-btn {
+  position: absolute;
+  right: 0.6rem;
+  bottom: -1.5rem;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid rgb(25, 135, 84);
+  border-radius: 10px;
+  color: #198754;
+  background-color: transparent;
+  font-weight: 500;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.custom-addtocart-btn:hover {
+  background-color: rgb(25, 135, 84);
+  color: white;
+}

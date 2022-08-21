@@ -1,8 +1,13 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate("/menu");
+  }, []);
+
   return (
     <>
       <nav className="navbar">

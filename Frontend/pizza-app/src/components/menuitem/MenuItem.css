@@ -47,6 +47,21 @@
   content: "/-";
 }
 
+.customize-btn {
+  border: 1px solid rgb(255, 255, 255);
+  color: rgba(53, 53, 53, 0.87);
+  background-color: rgb(255, 255, 255);
+  opacity: 0.92;
+  display: flex;
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  position: absolute;
+  right: 0.8rem;
+  bottom: 1rem;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 .menu-item {
   height: 45%;
   margin-top: 5px;
