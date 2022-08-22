@@ -4,6 +4,7 @@ import { useAppSelector } from "../../app/store";
 import MenuCart from "../../components/menucart/MenuCart";
 import "./Menu.css";
 import MenuItem from "../../components/menuitem/MenuItem";
+import { MENU_URL } from "../../components/routes";
 
 interface MenuData {
   category: string;
@@ -17,8 +18,6 @@ interface MenuData {
     fixed: Array<string>;
   };
 }
-
-const URL = "http://localhost:4000/menu/";
 
 const Menu = () => {
   const client_id = useAppSelector((state) => state.auth.client_id);
@@ -35,7 +34,7 @@ const Menu = () => {
 
   const fetchMenuData = () => {
     axios
-      .get(`${URL}/${menu}`, AXIOS_CONFIG)
+      .get(`${MENU_URL}/${menu}`, AXIOS_CONFIG)
       .then((result: AxiosResponse) => {
         setMenuData(result.data);
       })

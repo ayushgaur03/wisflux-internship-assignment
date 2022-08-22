@@ -1,4 +1,5 @@
 import React from "react";
+import { category_nonveg, category_veg, STATIC_URL } from "../routes";
 import "./MenuCartItem.css";
 
 interface CartItem {
@@ -11,10 +12,6 @@ interface CartItem {
   changeQty: any;
   size: string;
 }
-
-const STATIC_URL = "http://localhost:4000/static";
-const category_nonveg = "nonveg.png";
-const category_veg = "veg.jfif";
 
 const MenuCartItem = ({
   img_loc,

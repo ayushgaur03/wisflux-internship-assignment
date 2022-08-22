@@ -4,6 +4,7 @@ import { useAppSelector } from "../../app/store";
 import MenuCartItem from "../menucartitem/MenuCartItem";
 import "./MenuCart.css";
 import { useNavigate } from "react-router-dom";
+import { CART_URL } from "../routes";
 
 interface CartItemFromServer {
   cart_id: number;
@@ -17,8 +18,6 @@ interface CartItemFromServer {
   img_loc: string;
   dscrptn: string;
 }
-
-const URL = "http://localhost:4000/cart";
 
 const MenuCart = ({ render_item }: { render_item: string }) => {
   const navigate = useNavigate();
@@ -37,7 +36,7 @@ const MenuCart = ({ render_item }: { render_item: string }) => {
 
   useEffect(() => {
     axios
-      .get(URL, AXIOS_CONFIG)
+      .get(CART_URL, AXIOS_CONFIG)
       .then((res) => {
         setItems(res.data);
       })
@@ -49,7 +48,7 @@ const MenuCart = ({ render_item }: { render_item: string }) => {
   const updateQuantity = (q: number, cart_id: number) => {
     console.log(client_id);
     axios
-      .put(`${URL}/${cart_id}/${q}`, {}, AXIOS_CONFIG)
+      .put(`${CART_URL}/${cart_id}/${q}`, {}, AXIOS_CONFIG)
       .then((result) => {
         console.log(result);
         setQty(q);
@@ -61,7 +60,7 @@ const MenuCart = ({ render_item }: { render_item: string }) => {
 
   const deleteItem = (cart_id: number) => {
     axios
-      .delete(`${URL}/${cart_id}`, AXIOS_CONFIG)
+      .delete(`${CART_URL}/${cart_id}`, AXIOS_CONFIG)
       .then((result) => {
         setQty(0);
       })

@@ -4,8 +4,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import { useAppSelector } from "../../app/store";
 import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
 import { useNavigate } from "react-router-dom";
-
-const URL = "http://localhost:4000/cart";
+import { CART_URL } from "../../components/routes";
 
 interface CheckoutItems {
   cart_id: number;
@@ -36,7 +35,7 @@ const Checkout = () => {
 
   const fetchCart = () => {
     axios
-      .get(URL, AXIOS_CONFIG)
+      .get(CART_URL, AXIOS_CONFIG)
       .then((result: AxiosResponse) => {
         setItems(result.data);
       })

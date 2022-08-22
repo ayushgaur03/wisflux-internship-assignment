@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { RegisterUser } from "../../app/actions./authMethod";
 import { authActions } from "../../app/slices/authSlice";
 import { useAppDispatch } from "../../app/store";
+import { AUTH_URL } from "../../components/routes";
 import "./Login.css";
-
-const URL = `http://localhost:4000/auth`;
 
 const Login = () => {
   let navigate = useNavigate();
@@ -27,7 +26,7 @@ const Login = () => {
     };
 
     axios
-      .post(`${URL}/login`, REG_REQ_BODY)
+      .post(`${AUTH_URL}/login`, REG_REQ_BODY)
       .then((result: AxiosResponse) => {
         console.log(result);
         const data = result.data.data;
@@ -59,7 +58,7 @@ const Login = () => {
     console.log("Registering");
     RegisterUser(REG_REQ_BODY);
     axios
-      .post(`${URL}/register`, REG_REQ_BODY)
+      .post(`${AUTH_URL}/register`, REG_REQ_BODY)
       .then((result: AxiosResponse) => {
         console.log(result);
         const data = result.data.data;
