@@ -14,7 +14,6 @@ const Login = (req: Request, res: Response) => {
   const client_password: string = req.body.password;
 
   const search_param = login_type(client_username);
-  console.log(search_param);
 
   db.one(search_param, client_username)
     .then((result: any) => {

@@ -31,6 +31,7 @@ const Customize = () => {
   const nav_props: any = useLocation();
   const navigate: NavigateFunction = useNavigate();
   const client_id: string = useAppSelector((state) => state.auth.client_id);
+  const isLogin = useAppSelector((state) => state.auth.isLogin);
   const [itemData, setItemData] = useState<ItemInterface>();
   const [pizzaSize, setPizzaSize] = useState<string>("small");
 
@@ -64,6 +65,10 @@ const Customize = () => {
   };
 
   const addItemInCart = () => {
+    if (!isLogin) {
+      alert("We would like you to login first");
+      return;
+    }
     axios
       .post("http://localhost:4000/cart", RESP_BODY, AXIOS_CONFIG)
       .then((result: AxiosResponse) => {

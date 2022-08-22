@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Menu from "./views/menu/Menu";
 import Checkout from "./views/checkout/Checkout";
 import Customize from "./views/customize/Customize";
+import Login from "./views/Login/Login";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="menu" element={<Menu />} />
             <Route path="checkout" element={<Checkout />} />
             <Route path="customize" element={<Customize />} />
+            <Route path="login" element={<Login />} />
           </Route>
         </Routes>
       </BrowserRouter>

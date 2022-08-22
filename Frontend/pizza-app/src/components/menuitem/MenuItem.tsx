@@ -35,6 +35,7 @@ const MenuItem = ({
   handleRender,
 }: MenuItemProps) => {
   const navigate = useNavigate();
+  const isLogin = useAppSelector((state) => state.auth.isLogin);
   const client_id: string = useAppSelector((state) => state.auth.client_id);
   const [itemSize, setItemSize] = useState<string>("small");
 
@@ -52,6 +53,11 @@ const MenuItem = ({
   };
 
   const addItemInCart = () => {
+    if (!isLogin) {
+      alert("We would like you to login first");
+      return;
+    }
+
     axios
       .post("http://localhost:4000/cart", RESP_BODY, AXIOS_CONFIG)
       .then((result: AxiosResponse) => {
