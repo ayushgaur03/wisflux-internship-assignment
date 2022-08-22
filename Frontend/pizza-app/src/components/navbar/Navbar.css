@@ -11,7 +11,9 @@
 }
 
 .left-section {
-  margin-left: 1%;
+  margin-left: 2%;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .right-section {
