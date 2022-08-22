@@ -31,6 +31,7 @@ const Login = () => {
       .then((result: AxiosResponse) => {
         console.log(result);
         const data = result.data.data;
+        dispatch(authActions.LogInUser());
         dispatch(
           authActions.UpdateClientData({
             client_name: data.name,

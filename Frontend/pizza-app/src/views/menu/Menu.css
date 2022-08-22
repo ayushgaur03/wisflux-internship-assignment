@@ -38,6 +38,10 @@
   justify-content: center;
   width: 100%;
   cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
 }
 
 .menu-display {
@@ -70,4 +74,3 @@
   height: calc(100% - 35px);
   overflow-y: auto;
 }
-

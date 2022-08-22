@@ -24,7 +24,6 @@ const authSlice = createSlice({
       action: PayloadAction<{ client_name: string; client_id: string }>
     ) => {
       console.log(action.payload);
-      state.isLogin = true;
       state.client_name = action.payload.client_name;
       state.client_id = action.payload.client_id;
     },
