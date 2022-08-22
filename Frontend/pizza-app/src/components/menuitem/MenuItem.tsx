@@ -4,6 +4,7 @@ import DropDown from "../dropdown/DropDown";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { useAppSelector } from "../../app/store";
 import { useNavigate } from "react-router-dom";
+import { CART_URL, category_nonveg, category_veg, STATIC_URL } from "../routes";
 
 interface MenuItemProps {
   menu_id: number;
@@ -20,10 +21,6 @@ const options = [
   { label: "Medium", value: "medium" },
   { label: "Large", value: "large" },
 ];
-
-const STATIC_URL = "http://localhost:4000/static";
-const category_nonveg = "nonveg.png";
-const category_veg = "veg.jfif";
 
 const MenuItem = ({
   menu_id,
@@ -59,7 +56,7 @@ const MenuItem = ({
     }
 
     axios
-      .post("http://localhost:4000/cart", RESP_BODY, AXIOS_CONFIG)
+      .post(CART_URL, RESP_BODY, AXIOS_CONFIG)
       .then((result: AxiosResponse) => {
         console.log(result.data);
         handleRender(name);

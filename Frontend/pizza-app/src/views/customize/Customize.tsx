@@ -3,6 +3,12 @@ import React, { useState, useEffect } from "react";
 import { NavigateFunction, useLocation, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/store";
 import DropDown from "../../components/dropdown/DropDown";
+import {
+  category_nonveg,
+  category_veg,
+  MENU_URL,
+  STATIC_URL,
+} from "../../components/routes";
 import "./Customize.css";
 
 interface ItemInterface {
@@ -23,10 +29,6 @@ const options = [
   { label: "Large", value: "large" },
 ];
 
-const STATIC_URL = "http://localhost:4000/static";
-const category_nonveg = "nonveg.png";
-const category_veg = "veg.jfif";
-
 const Customize = () => {
   const nav_props: any = useLocation();
   const navigate: NavigateFunction = useNavigate();
@@ -37,7 +39,7 @@ const Customize = () => {
 
   const fetchItemDetails = () => {
     axios
-      .get(`http://localhost:4000/menu/item/${nav_props.state.menu_id}`)
+      .get(`${MENU_URL}/item/${nav_props.state.menu_id}`)
       .then((result: AxiosResponse) => {
         setItemData(result.data);
       })
