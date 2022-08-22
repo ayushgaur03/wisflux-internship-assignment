@@ -1,7 +1,7 @@
 export interface order_by_user {
   invoice_no: string;
   user_id: string;
-  ordered_items: object;
+  ordered_items: string;
   amount: number;
 }
 

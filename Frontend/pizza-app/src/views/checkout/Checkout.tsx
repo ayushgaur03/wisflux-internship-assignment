@@ -4,7 +4,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import { useAppSelector } from "../../app/store";
 import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
 import { useNavigate } from "react-router-dom";
-import { CART_URL } from "../../components/routes";
+import { CART_URL, ORDERS_URL } from "../../components/routes";
 
 interface CheckoutItems {
   cart_id: number;
@@ -41,6 +41,22 @@ const Checkout = () => {
       })
       .catch((err: AxiosError) => {
         console.warn(err);
+      });
+  };
+
+  const placeOrder = () => {
+    const REQ_BODY = {
+      ordered_items: {},
+      amount: 1.12 * subTotal + 30,
+    };
+    console.log(REQ_BODY);
+    axios
+      .post(`${ORDERS_URL}`, REQ_BODY, AXIOS_CONFIG)
+      .then((result: AxiosResponse) => {
+        console.log(result.data.data);
+      })
+      .catch((err: AxiosError) => {
+        console.log(err);
       });
   };
 
@@ -110,16 +126,6 @@ const Checkout = () => {
                 />
               );
             })}
-          {/* <CheckoutItem
-      name={'Cheesy Dip'}
-      price={30}
-      dscrptn={'An all-time favorite with your Garlic Breadsticks & Stuffed Garlic Bread for a Cheesy indulgence'}
-      customization={''}
-      category={'sides'}
-      qty={2}
-      changeQty={(e)=>console.log('working')}
-      img_loc={'cheesy_dip.webp'}
-      /> */}
         </div>
       </section>
       <section className="right">
@@ -153,7 +159,11 @@ const Checkout = () => {
             </span>
           </div>
         </div>
-        <button type="submit" className={"place-btn"}>
+        <button
+          type="submit"
+          className={"place-btn"}
+          onClick={() => placeOrder()}
+        >
           Place Order
         </button>
       </section>

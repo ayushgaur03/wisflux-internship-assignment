@@ -16,6 +16,7 @@ const CreateOrder = (req: Request, res: Response) => {
       res.status(201).send({ msg: "Order created!!", data: order });
     })
     .catch((err: any) => {
+      console.log(err);
       res.status(400).send(err);
     });
 };

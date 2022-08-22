@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Menu from "./views/menu/Menu";
 import Checkout from "./views/checkout/Checkout";
 import Customize from "./views/customize/Customize";
-import Login from "./views/Login/Login";
+import Login from "./views/login/Login";
 
 function App() {
   return (
