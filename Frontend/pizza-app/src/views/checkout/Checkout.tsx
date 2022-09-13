@@ -20,6 +20,7 @@ interface CheckoutItems {
 }
 
 const Checkout = () => {
+  const navigation = useNavigate();
   const client_id: string = useAppSelector((state) => state.auth.client_id);
   const client_name: string = useAppSelector((state) => state.auth.client_name);
   const [qty, setQty] = useState<number>(0);
@@ -46,14 +47,14 @@ const Checkout = () => {
 
   const placeOrder = () => {
     const REQ_BODY = {
-      ordered_items: {},
+      ordered_items: JSON.stringify(items),
       amount: 1.12 * subTotal + 30,
     };
-    console.log(REQ_BODY);
     axios
       .post(`${ORDERS_URL}`, REQ_BODY, AXIOS_CONFIG)
       .then((result: AxiosResponse) => {
-        console.log(result.data.data);
+        console.log(result.data);
+        navigate("../biller", { state: result.data.data });
       })
       .catch((err: AxiosError) => {
         console.log(err);

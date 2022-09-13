@@ -1,0 +1,42 @@
+.biller-page-container {
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+.bill-section-container {
+  width: 35%;
+  margin: 0 auto;
+  padding: 10px 10px;
+  background-color: aliceblue;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bill-section1 {
+  padding: 10px 20px;
+}
+
+.section-title {
+  margin-bottom: 10px;
+}
+.section-title span {
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.section-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bill-data-row {
+  margin-bottom: 2px;
+}
+
+.bill-data-cat {
+  font-size: 16px;
+  font-weight: 500;
+  color: grey;
+}

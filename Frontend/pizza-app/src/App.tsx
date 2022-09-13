@@ -6,6 +6,7 @@ import Menu from "./views/menu/Menu";
 import Checkout from "./views/checkout/Checkout";
 import Customize from "./views/customize/Customize";
 import Login from "./views/login/Login";
+import Biller from "./views/biller/Biller";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="menu" element={<Menu />} />
             <Route path="checkout" element={<Checkout />} />
             <Route path="customize" element={<Customize />} />
+            <Route path="biller" element={<Biller />} />
             <Route path="login" element={<Login />} />
           </Route>
         </Routes>

@@ -9,9 +9,9 @@ const Navbar = () => {
   const dispatch = useAppDispatch();
   const isLogin = useAppSelector((state) => state.auth.isLogin);
   const client_name: string = useAppSelector((state) => state.auth.client_name);
-  useEffect(() => {
-    navigate("/menu");
-  }, []);
+  // useEffect(() => {
+  //   navigate("/menu");
+  // }, []);
 
   return (
     <>
