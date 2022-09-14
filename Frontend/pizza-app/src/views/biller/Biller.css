@@ -10,7 +10,7 @@
   background-color: aliceblue;
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .bill-section1 {
@@ -39,4 +39,102 @@
   font-size: 16px;
   font-weight: 500;
   color: grey;
+}
+
+.bill-section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.order-items {
+  margin-bottom: 5px;
+}
+
+.table-structure {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.order-labels {
+  margin-bottom: 10px;
+}
+
+.order-label-id {
+  width: 8%;
+  display: flex;
+  justify-content: center;
+}
+
+.order-label-name {
+  width: 55%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 16px;
+}
+
+.order-label-custom {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.order-label-price {
+  width: 15%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bill-item-id {
+  width: 8%;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+.bill-item-name {
+  width: 55%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 16px;
+  font-size: 14px;
+}
+.bill-item-custom {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+.bill-item-price {
+  width: 15%;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+}
+
+.bill-section3 {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.bill-component {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.bill-amount-label {
+  width: 50%;
+  float: left;
+  padding-left: 20px;
+}
+
+.bill-amount-figure {
+  float: right;
+}
+
+.bold {
+  font-weight: 500;
+  font-size: 20px;
 }

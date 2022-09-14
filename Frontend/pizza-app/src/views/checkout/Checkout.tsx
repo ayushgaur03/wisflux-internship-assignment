@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Checkout.css";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { useAppSelector } from "../../app/store";
-import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
+import CheckoutItem from "../../components/checkoutItem/CheckoutItem";
 import { useNavigate } from "react-router-dom";
 import { CART_URL, ORDERS_URL } from "../../components/routes";
 
@@ -47,14 +47,17 @@ const Checkout = () => {
 
   const placeOrder = () => {
     const REQ_BODY = {
-      ordered_items: JSON.stringify(items),
+      ordered_items: items,
       amount: 1.12 * subTotal + 30,
     };
     axios
-      .post(`${ORDERS_URL}`, REQ_BODY, AXIOS_CONFIG)
+      .post(`${ORDERS_URL}`, REQ_BODY, {
+        headers: {
+          user_id: "213b3007-120e-4b6f-b970-b1c2eb8cb580",
+        },
+      })
       .then((result: AxiosResponse) => {
-        console.log(result.data);
-        navigate("../biller", { state: result.data.data });
+        navigate("../biller");
       })
       .catch((err: AxiosError) => {
         console.log(err);
