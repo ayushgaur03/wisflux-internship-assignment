@@ -12,7 +12,7 @@ const login_type = (username: string) => {
 const Login = (req: Request, res: Response) => {
   const client_username: string = req.body.username;
   const client_password: string = req.body.password;
-
+  const { username, password } = req.body;
   const search_param = login_type(client_username);
 
   db.one(search_param, client_username)
