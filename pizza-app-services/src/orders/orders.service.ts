@@ -14,12 +14,16 @@ export class OrdersService {
     private readonly ordersRepository: Repository<orders_ent>,
   ) {}
 
-  async getUserRecord(client_id: string): Promise<users_ent> {
-    return await this.userRepository.findOne({
-      where: {
-        user_id: client_id,
-      },
-    });
+  async getUserRecord(client_id: string): Promise<any> {
+    try {
+      return await this.userRepository.findOne({
+        where: {
+          user_id: client_id,
+        },
+      });
+    } catch (err) {
+      return '';
+    }
   }
 
   async getOrders(client_id: string): Promise<orders_ent> {
@@ -32,21 +36,22 @@ export class OrdersService {
       .getOne();
   }
 
-  async createOrder(body: CreateOrderDto) {
+  async createOrder(body: CreateOrderDto, client_id: string) {
     let orderToSaveWithClient: users_ent;
-    const client_account: users_ent = await this.getUserRecord(body.user_id);
-
-    if (client_account === undefined) {
-      return 'No User found';
+    const client_account = await this.getUserRecord(client_id);
+    if (client_account === null) {
+      return 'No User Found';
     } else {
       orderToSaveWithClient = client_account;
     }
 
-    return await this.ordersRepository.save({
+    await this.ordersRepository.save({
       invoice_no: Date.now(),
       amount: body.amount,
       ordered_items: body.ordered_items,
       user: orderToSaveWithClient,
     });
+
+    return 'OK';
   }
 }
