@@ -1,4 +1,13 @@
-import { Body, Controller, Get, Headers, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Headers,
+  HttpStatus,
+  Post,
+  Res,
+} from '@nestjs/common';
+import { Response } from 'express';
 import { CreateOrderDto } from './dto/orders.dto';
 import { OrdersService } from './orders.service';
 
@@ -7,12 +16,37 @@ export class OrdersController {
   constructor(private ordersService: OrdersService) {}
 
   @Get()
-  getLatestOrder(@Headers('user_id') header: string) {
-    return this.ordersService.getOrders(header);
+  async getLatestOrder(
+    @Headers('user_id') header: string,
+    @Res() response: Response,
+  ) {
+    if (header === undefined)
+      return response
+        .status(HttpStatus.UNAUTHORIZED)
+        .send('Please provide the HEADER !!');
+    return response
+      .status(200)
+      .send(await this.ordersService.getOrders(header));
   }
 
   @Post()
-  createOrder(@Body() body: CreateOrderDto) {
-    this.ordersService.createOrder(body);
+  async createOrder(
+    @Body() body: CreateOrderDto,
+    @Headers('user_id') header: string,
+    @Res() response: Response,
+  ) {
+    if (header === undefined)
+      return response
+        .status(HttpStatus.UNAUTHORIZED)
+        .send('Please provide the HEADER !!');
+    const status: string = await this.ordersService.createOrder(body, header);
+    if (status === 'OK')
+      response
+        .status(HttpStatus.CREATED)
+        .send('Order has been created succesfully');
+    else
+      response
+        .status(HttpStatus.BAD_REQUEST)
+        .send('Your order could not be placed!!');
   }
 }
