@@ -1,13 +1,6 @@
-import {
-  Body,
-  ClassSerializerInterceptor,
-  Controller,
-  Get,
-  HttpCode,
-  HttpStatus,
-  Post,
-  UseInterceptors,
-} from '@nestjs/common';
+import { Body, Controller, Get, HttpStatus, Post, Res } from '@nestjs/common';
+import { Response } from 'express';
+import { loginInterface } from './interfaces/login.interface';
 import { UserInterface } from './interfaces/users.interface';
 import { users_ent } from './users.entity';
 import { UsersService } from './users.service';
@@ -21,11 +14,26 @@ export class UserController {
     return await this.usersService.findAll();
   }
 
-  @UseInterceptors(ClassSerializerInterceptor)
-  @Post()
-  async createUser(@Body() user_obj: UserInterface) {
-    const data = await this.usersService.createUser(user_obj);
-    delete data.password;
-    return { msg: 'You have succesfully created the user!!', data: data };
+  @Get('/login')
+  async login(@Body() reqBody: loginInterface, @Res() response: Response) {
+    const user_found = await this.usersService.loginUser(reqBody);
+    if (user_found === 'ERR')
+      return response
+        .status(HttpStatus.UNAUTHORIZED)
+        .send('The user email or password is incorrect.');
+    else {
+      return response
+        .status(HttpStatus.OK)
+        .send({ msg: 'User verified successfully!!', data: user_found });
+    }
+  }
+
+  @Post('/register')
+  async createUser(@Body() user_obj: UserInterface, @Res() response: Response) {
+    const client_data = await this.usersService.createUser(user_obj);
+    delete client_data.password;
+    return response
+      .status(HttpStatus.CREATED)
+      .send({ msg: 'User registered succesfully!!', data: client_data });
   }
 }
