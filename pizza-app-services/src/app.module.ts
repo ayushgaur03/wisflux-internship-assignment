@@ -5,6 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { cart_ent } from './cart/cart.entity';
+import { CartModule } from './cart/cart.module';
 import { menu_ent } from './menu/menu.entity';
 import { MenuModule } from './menu/menu.module';
 import { orders_ent } from './orders/orders.entity';
@@ -28,11 +30,12 @@ import { UsersModule } from './users/users.module';
       host: 'localhost',
       database: 'pizzastore',
       synchronize: true,
-      entities: [users_ent, menu_ent, orders_ent],
+      entities: [users_ent, menu_ent, orders_ent, cart_ent],
     }),
     UsersModule,
     MenuModule,
     OrdersModule,
+    CartModule,
   ],
   controllers: [AppController],
   providers: [AppService],
