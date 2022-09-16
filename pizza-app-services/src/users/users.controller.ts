@@ -5,7 +5,7 @@ import { UserInterface } from './interfaces/users.interface';
 import { users_ent } from './users.entity';
 import { UsersService } from './users.service';
 
-@Controller('users')
+@Controller('auth')
 export class UserController {
   constructor(private usersService: UsersService) {}
 
@@ -14,7 +14,7 @@ export class UserController {
     return await this.usersService.findAll();
   }
 
-  @Get('/login')
+  @Post('/login')
   async login(@Body() reqBody: loginInterface, @Res() response: Response) {
     const user_found = await this.usersService.loginUser(reqBody);
     if (user_found === 'ERR')
