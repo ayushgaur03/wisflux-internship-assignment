@@ -6,8 +6,8 @@ import { MenuService } from './menu.service';
 export class MenuController {
   constructor(private menuService: MenuService) {}
 
-  @Get()
-  getCatMenu(@Query('cat') cat: string) {
+  @Get('/:cat')
+  getCatMenu(@Param('cat') cat: string) {
     return this.menuService.getCatMenu(cat);
   }
 
