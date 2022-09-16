@@ -51,16 +51,18 @@ const Checkout = () => {
       amount: 1.12 * subTotal + 30,
     };
     axios
-      .post(`${ORDERS_URL}`, REQ_BODY, {
-        headers: {
-          user_id: "213b3007-120e-4b6f-b970-b1c2eb8cb580",
-        },
-      })
+      .post(ORDERS_URL, REQ_BODY, AXIOS_CONFIG)
       .then((result: AxiosResponse) => {
+        console.log(result);
         navigate("../biller");
       })
       .catch((err: AxiosError) => {
         console.log(err);
+        if (err.response?.status === 400) {
+          alert("Your order cannot be placed!!");
+        } else if (err.response?.status === 401) {
+          alert("Please login again!!");
+        }
       });
   };
 

@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     console.log("Verifying...");
     const REG_REQ_BODY = {
-      username: user_email,
+      email: user_email,
       password: user_password,
     };
 
@@ -29,7 +29,8 @@ const Login = () => {
       .post(`${AUTH_URL}/login`, REG_REQ_BODY)
       .then((result: AxiosResponse) => {
         console.log(result);
-        const data = result.data.data;
+        const data = result.data.data
+        console.log(data);
         dispatch(authActions.LogInUser());
         dispatch(
           authActions.UpdateClientData({
