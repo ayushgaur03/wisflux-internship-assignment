@@ -48,10 +48,23 @@ export class CartService {
 
     try {
       return await this.cartRepository
-        .createQueryBuilder('cart_ent')
-        .leftJoinAndSelect('cart_ent.menu_item', 'menu_ent')
+        .createQueryBuilder()
+        .select([
+          'cart_ent.cart_id AS cart_id',
+          'cart_ent.qty AS qty',
+          'cart_ent.add_on AS add_on',
+          'cart_ent.menu_item AS menu_item',
+        ])
+        .addSelect([
+          'menu.name AS name',
+          'menu.category AS category',
+          'menu.price AS price',
+          'menu.dscrptn AS dscrptn',
+          'menu.img_location AS img_loc',
+        ])
+        .leftJoin('cart_ent.menu_item', 'menu')
         .where('cart_ent.user=:user', { user: user_obj.id })
-        .getMany();
+        .execute();
     } catch (err) {
       console.log(err);
       return 'ERR';
