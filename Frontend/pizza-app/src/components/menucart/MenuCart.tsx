@@ -38,6 +38,7 @@ const MenuCart = ({ render_item }: { render_item: string }) => {
     axios
       .get(CART_URL, AXIOS_CONFIG)
       .then((res) => {
+        console.log(res.data);
         setItems(res.data);
       })
       .catch((err) => {

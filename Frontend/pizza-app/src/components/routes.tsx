@@ -1,7 +1,7 @@
 // Major Web Services
 export const AUTH_URL = `http://localhost:8000/auth`;
-export const MENU_URL = "http://localhost:4000/menu";
-export const CART_URL = "http://localhost:4000/cart";
+export const MENU_URL = "http://localhost:8000/menu";
+export const CART_URL = "http://localhost:8000/cart";
 export const ORDERS_URL = "http://localhost:8000/orders/";
 
 // Static Files URL
