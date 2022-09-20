@@ -116,12 +116,6 @@ const Menu = () => {
                   handleRender={(item_name: string) => setRender(item_name)}
                 />
               ))}
-            {/* <MenuItem
-              name={"Cheesy Dip"}
-              dscrptn={"Cheesy Dip to eat"}
-              img_loc={"cheesy_dip.webp"}
-              price={60}
-            /> */}
           </div>
         </div>
       </div>
